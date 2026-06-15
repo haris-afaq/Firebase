@@ -111,9 +111,9 @@ class _HomeScreenState extends State<HomeScreen> {
         return AlertDialog(
           shape: RoundedRectangleBorder(borderRadius: BorderRadiusGeometry.circular(10)),
           title: Text("Logout Account", 
-          style: TextStyle(color: AppColors.redColor, fontSize: 18, fontWeight: FontWeight.w700),
+          style: TextStyle(color: AppColors.firebaseOrangeColor, fontSize: 18, fontWeight: FontWeight.w700),
           ),
-          content: Text("Logout Account",
+          content: Text("Are you sure you want to logout your account?",
           style: TextStyle(color: AppColors.blackColor,
           fontSize: 12,
           fontWeight: FontWeight.w500
