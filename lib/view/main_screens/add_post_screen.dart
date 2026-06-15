@@ -1,7 +1,7 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_practice/constants/app_colors.dart';
 import 'package:firebase_practice/constants/components/main_button.dart';
-import 'package:firebase_practice/view/main_screens/post_list.dart';
+import 'package:firebase_practice/view/main_screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class AddPostScreen extends StatefulWidget {
@@ -19,9 +19,11 @@ class _AddPostScreenState extends State<AddPostScreen> {
 
   Future<void> addingPost()async{
     try{
-      await databaseReference.child(DateTime.now().millisecondsSinceEpoch.toString()).set({
+      String id = DateTime.now().millisecondsSinceEpoch.toString();
+      
+      await databaseReference.child(id).set({
                 "title": textController.text.toString(),
-                "id": DateTime.now().millisecondsSinceEpoch.toString(),
+                "id": id,
               });
               if(!mounted) return;
               ScaffoldMessenger.of(context).showSnackBar(
@@ -37,7 +39,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
                 ))
               );
               Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>
-              PostList()
+              HomeScreen()
               ));
     }
     catch(e){
