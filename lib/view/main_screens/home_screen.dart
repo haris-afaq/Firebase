@@ -128,6 +128,40 @@ class _HomeScreenState extends State<HomeScreen> {
                         )),
                         PopupMenuItem(
                           value: 2,
+                          onTap: () async{
+                            try{
+                              await databaseReference.child(snapshot.child("id").value.toString()).remove();
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  backgroundColor: AppColors.greenColor,
+                                  clipBehavior: Clip.antiAlias,
+                                  closeIconColor: AppColors.whiteColor,
+                                  showCloseIcon: true,
+                                  content: Text("Post deleted successfully...",
+                                style: TextStyle(
+                                  color: AppColors.whiteColor,
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 12
+                                ),
+                                ))
+                              );
+                            }
+                            catch(e){
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  backgroundColor: AppColors.redColor,
+                                  clipBehavior: Clip.antiAlias,
+                                  closeIconColor: AppColors.whiteColor,
+                                  showCloseIcon: true,
+                                  content: Text("Error: $e",
+                                style: TextStyle(color: AppColors.whiteColor,
+                                fontSize: 12,
+                                fontWeight: FontWeight.w400
+                                ),
+                                ))
+                              );
+                            }
+                          },
                           child: ListTile(
                             leading: Icon(Icons.delete, color: AppColors.redColor,),
                             title: Text("Delete"),
@@ -270,6 +304,7 @@ class _HomeScreenState extends State<HomeScreen> {
         );
       });
   }
+
 }
 
 
