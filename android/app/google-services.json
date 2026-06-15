@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "371847688669",
+    "project_id": "fir-72f7e",
+    "storage_bucket": "fir-72f7e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:371847688669:android:173d04a1a4262ac1c58634",
+        "android_client_info": {
+          "package_name": "com.harix.firebase_practice"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCh2knuXC0sXatGJekgE_k6FwzsDnAP5KI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
