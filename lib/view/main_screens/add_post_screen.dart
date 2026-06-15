@@ -36,7 +36,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
                 fontWeight: FontWeight.w400),
                 ))
               );
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>
               PostList()
               ));
     }
