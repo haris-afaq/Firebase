@@ -2,7 +2,8 @@ import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_practice/view/auth/login.dart';
-import 'package:firebase_practice/view/main_screens/home_screen.dart';
+import 'package:firebase_practice/view/google_maps/mapBox_map.dart';
+
 import 'package:flutter/material.dart';
 
 class SplashScreenServices {
@@ -14,7 +15,7 @@ class SplashScreenServices {
     if(user != null){
       Timer((Duration(seconds: 5)), (){
     Navigator.push(context, MaterialPageRoute(builder: (context)=>
-    HomeScreen()
+    MapboxMapScreen()
     ));
    }); 
     }

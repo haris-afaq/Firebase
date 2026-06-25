@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_practice/constants/app_colors.dart';
 import 'package:firebase_practice/constants/components/main_button.dart';
 import 'package:firebase_practice/view/auth/create_account.dart';
-import 'package:firebase_practice/view/main_screens/home_screen.dart';
+import 'package:firebase_practice/view/firebase_realtime_database/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {

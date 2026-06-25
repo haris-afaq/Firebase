@@ -3,7 +3,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:firebase_practice/constants/app_colors.dart';
 import 'package:firebase_practice/view/auth/login.dart';
-import 'package:firebase_practice/view/main_screens/add_post_screen.dart';
+import 'package:firebase_practice/view/firebase_realtime_database/add_post_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -130,6 +130,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           value: 2,
                           onTap: () async{
                             try{
+                              // the only line to delete data from firebase real time database...
                               await databaseReference.child(snapshot.child("id").value.toString()).remove();
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
@@ -236,6 +237,10 @@ class _HomeScreenState extends State<HomeScreen> {
       context: context, 
       builder: (BuildContext context){
         return AlertDialog(
+          backgroundColor: AppColors.whiteColor,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadiusGeometry.circular(10)
+          ),
           title: Text("Edit Post",
           style: TextStyle(color: AppColors.firebaseOrangeColor, 
           fontSize: 18,
